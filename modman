@@ -1,0 +1,3 @@
+## Modman Module Custom Oauth
+app/code/community/Brainup/*                     app/code/community/Brainup/
+app/etc/modules/*                                app/etc/modules/

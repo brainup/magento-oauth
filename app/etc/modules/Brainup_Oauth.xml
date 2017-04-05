@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Brainup_Oauth>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Brainup_Oauth>
+    </modules>
+</config>

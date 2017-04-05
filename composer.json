@@ -1,0 +1,10 @@
+{
+  "name": "brainup/magento-oauth",
+  "type": "magento-module",
+  "description": "This module integrates Magento with a custom oauth server",
+
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  }
+
+}
