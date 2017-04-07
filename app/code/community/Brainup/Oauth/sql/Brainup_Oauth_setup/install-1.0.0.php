@@ -1,29 +1,34 @@
 <?php
 
 $installer = $this;
-$installer->startSetup();
-
-$installer->setCustomerAttributes(
-    array(
-        'brainup_oauth_oid' => array(
-            'type' => 'text',
-            'visible' => false,
-            'required' => false,
-            'user_defined' => false                
-        ),            
-        'brainup_oauth_otoken' => array(
-            'type' => 'text',
-            'visible' => false,
-            'required' => false,
-            'user_defined' => false                
-        )           
-    )
+$attributeId  = array(
+    'type' => 'text',
+    'visible' => false,
+    'required' => false,
+    'user_defined' => 0,
+    'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
+    'default' => '0',
+    'used_in_forms' => array(
+        'adminhtml_customer',
+    ),
+    'note' => 'Id Oauth.',
 );
 
-// Install our custom attributes
-$installer->installCustomerAttributes();
+$attributeToken  = array(
+    'type' => 'text',
+    'visible' => false,
+    'required' => false,
+    'user_defined' => 0,
+    'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
+    'default' => '0',
+    'used_in_forms' => array(
+        'adminhtml_customer',
+    ),
+    'note' => 'Id Oauth.',
+);
 
-// Remove our custom attributes (for testing)
-//$installer->removeCustomerAttributes();
+$installer->addAttribute('customer', 'brainup_oauth_oid', $attributeId);
+$installer->addAttribute('customer', 'brainup_oauth_otoken', $attributeToken);
+
 
 $installer->endSetup();

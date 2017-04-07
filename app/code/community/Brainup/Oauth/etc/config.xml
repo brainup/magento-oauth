@@ -8,6 +8,29 @@
 		</Brainup_Oauth>
 	</modules>
 
+    <frontend>
+        <routers>
+            <routeurfrontend>
+                <use>standard</use>
+                <args>
+                    <module>Brainup_Oauth</module>
+                    <frontName>xoauth</frontName>
+                </args>
+            </routeurfrontend>
+        </routers>
+
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <Brainup_Oauth>
+                        <class>Brainup_Oauth/Observer</class>
+                        <method>indexPreDispatch</method>
+                    </Brainup_Oauth>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+    </frontend>
+
 	<global>
 
 		<models>
@@ -27,15 +50,19 @@
 				<class>Brainup_Oauth_Block</class>
 			</Brainup_Oauth>
 		</blocks>
-		
-		<resources>
-			<brainup_oauth_setup>
+
+        <resources>
+            <brainup_oauth_setup>
                 <setup>
                     <module>Brainup_Oauth</module>
-                    <class>Brainup_Oauth_Model_Resource_Setup</class>
+                    <class>Mage_Customer_Model_Resource_Setup</class>
                 </setup>
             </brainup_oauth_setup>
-		</resources>
+        </resources>
 
 	</global>
+
+
+
+
 </config>
